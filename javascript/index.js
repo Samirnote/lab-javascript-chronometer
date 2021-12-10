@@ -47,39 +47,54 @@ function printSplit() {
 }
 
 function clearSplits() {
-  // ... your code goes here
+  
 }
 
 function setStopBtn() {
   btnLeftElement.classList.remove("start")
   btnLeftElement.classList.add("stop")
+  btnLeftElement.textContent="STOP";
 }
 
 
 function setSplitBtn() {
-  // ... your code goes here
+  btnRightElement.classList.remove("reset")
+  btnRightElement.classList.add("split")
+  btnRightElement.textContent="SPLIT";
 }
 
 function setStartBtn() {
   btnLeftElement.classList.remove("stop")
   btnLeftElement.classList.add("start")
+  btnLeftElement.textContent="START";
 }
 
 function setResetBtn() {
-  // ... your code goes here
+  btnRightElement.classList.remove("split")
+  btnRightElement.classList.add("reset")
+  btnRightElement.textContent="RESET";
+  
 }
 
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
   // ... your code goes here
-  if (btnLeftElement.classList.contains('stop')) setStartBtn;
-  else if (btnLeftElement.classList.contains('start')) setStopBtn;
+  if (btnLeftElement.classList.contains('start')){ 
+    setSplitBtn();
+    setStopBtn();
+    
+  }
+  else  {
+    setResetBtn();
+    setStartBtn();
+    
+  }
+  
 });
 
 // Reset/Split Button
-btnRightElement.addEventListener('click', () => {
+//btnRightElement.addEventListener('click', () => {
   
-  if (btnRightElement.classList.contains('stop')) setStartBtn;
-  else if (btnRightElement.classList.contains('start')) setStopBtn;
+  
 
-});
+//});
